@@ -10,6 +10,11 @@ import MenuProvider from './context/MenuProvider'
 import ItemProvider from './context/ItemProvider'
 import CartProvider from './context/CartProvider'
 import OrderProvider from './context/OrderProvider'
+// import { createGlobalStyle } from 'styled-components';
+
+// const GlobalStyle = createGlobalStyle`
+//     @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+// `;
 
 ReactDOM.render(
   <React.StrictMode>
