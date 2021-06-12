@@ -13,7 +13,6 @@ import RestaurantPage from './components/RestaurantPage';
 import RestaurantOrders from './components/RestaurantOrders';
 
 
-
 function App() {
     const { token, logout, user: { roles } } = useContext(UserContext)
 
@@ -24,7 +23,7 @@ function App() {
                             userRoles={roles}
                         /> 
             }
-            <div>
+            <div style={token ? {padding: "0 10% 10% 10%"} : {}}>
                 <Switch>
                     <Route exact path="/">
                         { token ? <Home /> : <Auth /> }

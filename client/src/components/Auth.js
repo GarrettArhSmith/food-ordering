@@ -10,6 +10,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
     background: linear-gradient(320deg, rgba(71,158,150,1) 0%, rgba(173,219,143,1) 100%);
 `
 
@@ -26,18 +27,20 @@ const Logo = styled.h1`
 
 const Card = styled.div`
     background: whitesmoke;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px 3px rgba(0,0,0,0.1);
     color: #444;
     transition: 0.2s ease;
+    display: grid;
 `
 
 const ToggleBtn = styled.button`
     border: none;
     border-radius: 3px;
     margin: 1rem;
-    padding: 0.3rem;
+    ${'' /* padding: 0.3rem; */}
+    font-size: 1em;
     background: transparent;
     transition: 0.3s ease;
     &:hover {
@@ -45,6 +48,14 @@ const ToggleBtn = styled.button`
         cursor: pointer;
         color: rgba(71,158,150,1);
     }
+`
+
+const GuestInfo = styled.p`
+    color: #999;
+    max-width: 70%;
+    place-self: center;
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8em;
 `
 
 function Auth(props) {
@@ -62,11 +73,13 @@ function Auth(props) {
                     <h1>Log In</h1>
                     <LoginForm />
                     <ToggleBtn onClick={handleToggle}>Not a member?</ToggleBtn>
+                    <GuestInfo>Use email: "guest@madeupemail.com" and password: "123" to try it out!</GuestInfo>
                 </Card> :
                 <Card>
                     <h1>Sign Up</h1>
                     <SignupForm />
                     <ToggleBtn onClick={handleToggle}>Already a member?</ToggleBtn>
+                    <GuestInfo>Use email: "guest@madeupemail.com" <br/> and password: "123" to try it out!</GuestInfo>
                 </Card>
             }
         </Container>
